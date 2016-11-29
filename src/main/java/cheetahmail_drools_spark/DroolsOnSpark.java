@@ -24,16 +24,6 @@ public class DroolsOnSpark {
 
     public static void main(String[] args){
 
-//        // step 1: Get KnowledgeBuilder from drool rules files.
-//        KnowledgeBuilder kbuilder = getKnowledgeBuilder("C:\\Users\\depatel\\IdeaProjects\\DroolsOnSpark\\src\\main\\resources\\campaignEvents.drl");
-//
-//        // step 2: Get KnowledgeBase out of KnowledgeBuilder packages.
-//        KnowledgeBase kbase = KnowledgeBaseFactory.newKnowledgeBase();
-//        kbase.addKnowledgePackages( kbuilder.getKnowledgePackages() );
-//
-//        // step 3: Get KnowledgeSession out of KnowledgeBase.
-//        StatelessKnowledgeSession ksession = kbase.newStatelessKnowledgeSession();
-
         // spark initialization.
         SparkConf sc = new SparkConf().setAppName("DroolsOnSpark").setMaster("local[*]");
         JavaSparkContext jsc = new JavaSparkContext(sc);
@@ -47,6 +37,9 @@ public class DroolsOnSpark {
                 return new CampaignEvent(v1);
             }
         });
+
+
+
         JavaRDD<CampaignEvent> drlRDD = eventsRDD.map(new Function<CampaignEvent, CampaignEvent>() {
             @Override
             public CampaignEvent call(CampaignEvent v1) throws Exception {

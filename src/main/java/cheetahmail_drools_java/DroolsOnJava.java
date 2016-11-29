@@ -5,8 +5,10 @@ import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
+import org.drools.command.CommandFactory;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatelessKnowledgeSession;
+import org.drools.runtime.rule.QueryResults;
 
 ;import java.io.BufferedReader;
 import java.io.File;
@@ -77,6 +79,7 @@ public class DroolsOnJava {
             System.out.println( e.getEventType() + "  "+ e.isValidEvent());
         }
 
+        //QueryResults results = ksession.execute(CommandFactory.qu);
 
         // Need to do some searching on how to use the kiemodule nad kieservices.
         // it seems like that we need to load the kiemodoule from the xsd.

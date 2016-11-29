@@ -12,6 +12,8 @@ import java.io.Serializable;
 
 /**
  * Created by depatel on 11/28/2016.
+ * It is a wrapper class with all the Drools Knowledge Initiation.
+ * We can not broadcast the KnowledgeSession directly as it is un-Serializable.
  */
 public class DroolSession implements Serializable {
 
