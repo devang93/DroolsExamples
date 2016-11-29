@@ -1,0 +1,8 @@
+package cheetahmail_drools_java
+
+rule "is of valid age"
+when
+    $event : CampaignEvent( (eventType == 3) || (eventType == 2) || (eventType == 1) || (eventType == 10) || (eventType == 20) || (eventType == 50) )
+then
+    $event.setValidEvent( true );
+end
